@@ -75,6 +75,59 @@ So the panel's genuinely informative phenotype is flowering time, flowering
 time varies over 18 days, and the marker is present in every accession tested
 across that whole range.
 
+## A mechanistic check on that conclusion
+
+The result above is a negative one, and negative results are worth pressing on.
+If presence of *PvFTa1* does not explain an 18-day spread in flowering, how
+large a difference in the gene's activity *would* be needed to produce it?
+
+`R/06_ode_model.R` answers that with a minimal model of the floral transition.
+Photoperiod drives FT production, FT accumulates, and the plant flowers when the
+accumulated signal crosses a threshold:
+
+```
+dF/dt = alpha - delta * F,    F(0) = 0,    flowering when F = theta
+```
+
+solved both numerically (`deSolve`) and in closed form, the two agreeing to
+1e-6. The trial sat at 6.7 N, where daylength varies by under an hour across the
+year, so holding `alpha` constant within an accession is defensible here in a
+way it would not be at temperate latitude.
+
+**What the data can identify, and what it cannot.** `alpha` and `theta` enter the
+crossing time only through their ratio, so no set of flowering dates can
+separate them; `theta` is fixed at 1 and `alpha` read in units of the threshold.
+The turnover rate `delta` is not identified by one date per accession either, so
+it is scanned across four orders of magnitude rather than estimated. The
+per-accession rates below are a **reparameterisation of the observed dates, not
+an independent estimate** — one date fixes one rate exactly.
+
+**The finding.** Across every turnover rate considered, the panel's full 28-to-46
+day spread requires at most a **1.63-fold** difference in FT production rate.
+A change that small is comfortably within the range of ordinary regulatory
+variation; it does not require a gene to be present in one accession and absent
+in another. The model therefore agrees with the marker data instead of
+contradicting it: a conserved locus with quantitative differences in output is
+sufficient to generate everything observed.
+
+Asked on this mechanistic scale, the *PvFTa1* comparison gives the same answer
+as the raw phenotype. At `delta = 0.05` the amplified accessions span implied
+rates of 0.0536 to 0.0647, which are exactly the panel minimum and maximum
+(Wilcoxon p = 0.81).
+
+**What it says to do next.** Because flowering date is a sensitive readout of
+production rate — a 10% rate difference moves flowering by about seven days — a
+presence/absence assay is far too coarse an instrument. Distinguishing these
+accessions needs measurement at the level where the variation actually lives:
+expression, or sequence.
+
+**A model that was not fitted.** Days to 50% flowering would in principle supply
+a second threshold crossing and make `delta` estimable. It cannot here: 62% of
+the accessions share a single recorded value of 38 days, which makes the
+interval between first and 50% flowering close to a linear function of the first
+date by construction. Fitting a second threshold to these numbers would report
+that artefact as biology, so the script documents the degeneracy and stops.
+
 ## Figures
 
 | | |
@@ -84,6 +137,9 @@ across that whole range.
 | `fig3_duncan_groups.png` | Week-6 accession means with Duncan groups |
 | `fig4_variance_components.png` | Where the variance sits for each trait |
 | `fig5_flowering_vs_growth.png` | Flowering time against vegetative size |
+| `fig6_ode_trajectories.png` | FT accumulation to threshold, analytic vs numerical |
+| `fig7_ode_implied_rates.png` | The panel on the implied production-rate scale |
+| `fig8_ode_rate_sensitivity.png` | Required rate difference vs the unidentified turnover rate |
 
 ## Methods
 
@@ -96,6 +152,10 @@ across that whole range.
 - **Mixed models** (`lme4`) to partition variance across accession, pot within
   accession, and the plant/session residual, and to estimate the repeatability
   of a single plant measurement.
+- **Mechanistic model** (`deSolve`): a linear accumulation-to-threshold ODE for
+  the floral transition, solved analytically and numerically, used to convert
+  flowering dates into implied production rates and to establish how large a
+  rate difference the observed spread requires.
 - **Flowering** is treated as one fixed value per accession, because the
   within-accession variance is exactly zero and an F ratio would have a zero
   denominator.

@@ -269,6 +269,140 @@ little power. The honest conclusion is that flowering time is the only
 phenotype in this dataset that is sharply structured, and it happens to be the
 one the marker was supposed to explain.
 
+## A mechanistic check: how big a difference would it take?
+
+The result above is negative, and negative results are worth pressing on. If
+presence of *PvFTa1* does not explain an 18-day spread, how large a difference
+in the gene's activity *would*?
+
+Reduce the floral transition to its minimum. Photoperiod drives FT production,
+FT accumulates, and the plant commits to flowering when the accumulated signal
+crosses a threshold $\theta$:
+
+$$\frac{dF}{dt} = \alpha - \delta F, \qquad F(0) = 0, \qquad \text{flowering when } F = \theta$$
+
+The trial sat at 6.7&deg;N, where daylength varies by under an hour across the
+year, so holding $\alpha$ constant within an accession is defensible here in a
+way it would not be at temperate latitude.
+
+```{r}
+#| label: ode-solve
+ft_ode <- function(t, state, parms) {
+  with(as.list(c(state, parms)), list(c(dF = alpha - delta * F)))
+}
+solve_numeric <- function(alpha, delta, times) {
+  as.numeric(deSolve::ode(y = c(F = 0), times = times, func = ft_ode,
+                          parms = list(alpha = alpha, delta = delta))[, "F"])
+}
+# Integrating factor gives the closed form.
+solve_analytic <- function(alpha, delta, times) {
+  (alpha / delta) * (1 - exp(-delta * times))
+}
+
+times <- seq(0, 60, by = 0.5)
+max(abs(solve_numeric(0.05, 0.03, times) - solve_analytic(0.05, 0.03, times)))
+```
+
+The solver and the closed form agree to about $10^{-6}$, which is the check that
+licenses using either one.
+
+### What the data can identify
+
+Setting $F(t^\*) = \theta$ and solving,
+
+$$t^\* = -\frac{1}{\delta}\log\!\left(1 - \frac{\theta\delta}{\alpha}\right)$$
+
+$\alpha$ and $\theta$ enter only through their ratio, so no collection of
+flowering dates can separate them. Fixing $\theta = 1$ costs nothing and makes
+$\alpha$ a rate in units of the threshold. $\delta$ is not identified either by
+one date per accession, so it is scanned rather than estimated.
+
+```{r}
+#| label: ode-invert
+implied_alpha <- function(t_obs, delta, theta = 1) {
+  theta * delta / (1 - exp(-delta * t_obs))
+}
+
+delta_grid <- 10^seq(-3, 0, length.out = 60)
+rate_scan <- tidyr::expand_grid(delta = delta_grid,
+                                pheno |> select(accession, dtff, pvfta1)) |>
+  mutate(alpha = implied_alpha(dtff, delta))
+
+fold_range <- rate_scan |>
+  group_by(delta) |>
+  summarise(fold = max(alpha) / min(alpha), .groups = "drop")
+
+tibble(`largest rate ratio the spread requires` = round(max(fold_range$fold), 3))
+```
+
+These per-accession rates are a **reparameterisation of the observed dates, not
+an independent estimate**: one date fixes one rate exactly.
+
+### The finding
+
+Across every turnover rate considered, the panel's full 28-to-46 day spread
+requires at most a **1.63-fold** difference in FT production rate. A change that
+small sits comfortably within ordinary regulatory variation. It does not require
+a gene to be present in one accession and absent in another.
+
+So the model agrees with the marker data rather than contradicting it: a
+conserved locus with quantitative differences in output is sufficient to
+generate everything observed.
+
+```{r}
+#| label: fig-ode-rates
+#| fig-cap: "Implied FT production rate per accession at delta = 0.05. The PvFTa1-amplified accessions are the panel maximum and minimum."
+rate_ref <- rate_scan |> filter(abs(delta - 0.05) == min(abs(delta - 0.05)))
+
+rate_ref |>
+  mutate(accession = forcats::fct_reorder(accession, alpha)) |>
+  ggplot(aes(alpha, accession, colour = pvfta1)) +
+  geom_segment(aes(x = min(alpha), xend = alpha, yend = accession),
+               linewidth = .5, colour = "grey85") +
+  geom_point(size = 3) +
+  scale_colour_manual(values = pal, name = NULL) +
+  labs(x = expression("Implied production rate, "*alpha), y = NULL) +
+  theme_minimal(base_size = 11) +
+  theme(legend.position = "top", panel.grid.minor = element_blank())
+```
+
+Asked on the mechanistic scale, the comparison gives the same answer as the raw
+phenotype:
+
+```{r}
+#| label: ode-test
+amp <- rate_ref |> filter(pvfta1 == "Amplified")
+oth <- rate_ref |> filter(pvfta1 != "Amplified")
+tibble(
+  `amplified range` = sprintf("%.4f - %.4f", min(amp$alpha), max(amp$alpha)),
+  `panel range`     = sprintf("%.4f - %.4f", min(rate_ref$alpha), max(rate_ref$alpha)),
+  `Wilcoxon p`      = round(suppressWarnings(wilcox.test(amp$alpha, oth$alpha))$p.value, 3)
+)
+```
+
+### A model that was deliberately not fitted
+
+Days to 50% flowering would in principle supply a second threshold crossing and
+make $\delta$ estimable. It cannot here:
+
+```{r}
+#| label: dt50-ties
+pheno |> count(dt50, name = "accessions") |> arrange(desc(accessions))
+```
+
+With 62% of the panel sharing a single recorded value, the interval between
+first and 50% flowering is close to a linear function of the first date by
+construction. A fitted second threshold would be reporting that artefact as
+biology, so the model stops here.
+
+### What it says to do next
+
+Flowering date is a sensitive readout of production rate: around the panel
+median, a 10% difference in $\alpha$ moves flowering by roughly seven days. That
+sensitivity is why a presence/absence assay is the wrong instrument. Telling
+these accessions apart requires measurement where the variation actually lives,
+at the level of expression or sequence.
+
 ## Departures from the original write-up
 
 Rebuilding from the sheet surfaced several discrepancies with the original

@@ -7,7 +7,8 @@ scripts <- c(
   "R/02_anova_duncan.R",
   "R/03_mixed_models.R",
   "R/04_flowering.R",
-  "R/05_figures.R"
+  "R/05_figures.R",
+  "R/06_ode_model.R"
 )
 
 for (s in scripts) {

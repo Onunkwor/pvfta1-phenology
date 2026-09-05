@@ -1,0 +1,315 @@
+---
+title: "PvFTa1 and flowering time in twenty Kano common bean accessions"
+subtitle: "A reproducible reanalysis of a screen-house trial"
+author: "Raphael Odera Onunkwor"
+date: today
+format:
+  html:
+    toc: true
+    toc-depth: 3
+    code-fold: show
+    code-tools: true
+    theme: cosmo
+    fig-width: 8
+    fig-height: 5
+    embed-resources: true
+    df-print: kable
+execute:
+  warning: false
+  message: false
+knitr:
+  opts_knit:
+    root.dir: ".."
+bibliography: references.bib
+---
+
+```{r}
+#| label: setup
+#| include: false
+knitr::opts_chunk$set(echo = TRUE, dpi = 150)
+source("R/00_packages.R")
+```
+
+## Summary
+
+*PvFTa1* is the common bean homologue of *Arabidopsis* FLOWERING LOCUS T and is
+treated in the breeding literature as a candidate locus for early flowering
+[@gonzalez2016; @bhakta2017]. Twenty *Phaseolus vulgaris* accessions collected
+from markets across ten Local Government Areas of Kano State, Nigeria, were
+grown in a screen house and scored for growth and flowering. Five accessions
+were amplified for a 300 bp *PvFTa1* fragment.
+
+This report asks one question: **does carrying the *PvFTa1* amplicon track
+flowering time across this panel?**
+
+The answer is no. The five genotyped accessions span the panel's entire 18-day
+range in days to first flowering — they include both the earliest and the
+latest accession in the trial — and all five gave the product. A
+presence/absence assay at this locus has no discriminating power in this
+germplasm.
+
+## The trial
+
+Twenty accessions, two pots each, four seeds per pot thinned to two plants at
+week 2, in a completely randomised design: 80 plants. Growth traits were
+recorded weekly from week 2 to week 6; days to first flowering and days to 50%
+flowering were scored once per pot. The trial ran at the Department of
+Biological Sciences, Bells University of Technology, Ota, from November 2024 to
+July 2025.
+
+The analysis below starts from the original recording sheet rather than from
+the summary table, so every number can be traced to a row of data.
+
+```{r}
+#| label: tidy
+#| results: hide
+source("R/01_tidy_data.R")
+```
+
+```{r}
+#| label: load
+growth_long <- readr::read_csv(file.path(paths$derived, "growth_long.csv"),
+                               show_col_types = FALSE)
+week6 <- readr::read_csv(file.path(paths$derived, "week6_wide.csv"),
+                         show_col_types = FALSE)
+flowering <- readr::read_csv(file.path(paths$derived, "flowering.csv"),
+                             show_col_types = FALSE)
+```
+
+### What the sheet actually contains
+
+The export holds two stacked blocks of 40 rows. Before modelling anything, it
+is worth checking whether the two blocks are on a common scale.
+
+```{r}
+#| label: session-check
+week6 |>
+  select(reading, PH, NL, NB, LL, LB, SD) |>
+  pivot_longer(-reading, names_to = "trait", values_to = "value") |>
+  filter(!is.na(value)) |>
+  group_by(trait, reading) |>
+  summarise(mean = mean(value), .groups = "drop") |>
+  pivot_wider(names_from = reading, values_from = mean,
+              names_prefix = "block_") |>
+  mutate(ratio = round(block_2 / block_1, 2)) |>
+  arrange(desc(ratio))
+```
+
+They are not. Block 2 runs about three times higher than block 1 for plant
+height and about seven times higher for stem diameter. A factor of seven on a
+stem diameter is a change of measurement scale, not of plants — two seedlings
+thinned from the same pot cannot differ that way. Every model below therefore
+carries `reading` as a fixed effect, and stem-diameter results are not
+comparable across blocks.
+
+This is the kind of thing that only surfaces by going back to the raw sheet.
+
+## Flowering phenology
+
+```{r}
+#| label: pheno
+pheno <- flowering |>
+  filter(!is.na(dtff)) |>
+  group_by(accession_code, accession, pvfta1) |>
+  summarise(dtff = first(dtff), dt50 = first(dt50),
+            category = first(category), .groups = "drop") |>
+  arrange(dtff)
+
+pheno |> select(accession, dtff, dt50, category, pvfta1)
+```
+
+Sixteen of the twenty accessions carry a flowering record in the sheet.
+Days to first flowering runs from **`r min(pheno$dtff)`** days (Kumbotso3) to
+**`r max(pheno$dtff)`** days (Dawanao12), a spread of
+**`r max(pheno$dtff) - min(pheno$dtff)`** days.
+
+### A note on zero variance
+
+Both pots of every accession recorded exactly the same flowering dates.
+
+```{r}
+#| label: zero-var
+flowering |>
+  filter(!is.na(dtff)) |>
+  group_by(accession) |>
+  summarise(dtff_sd = sd(dtff), dt50_sd = sd(dt50), .groups = "drop") |>
+  summarise(`accessions with any within-accession variation` =
+              sum(dtff_sd > 0 | dt50_sd > 0, na.rm = TRUE),
+            `accessions checked` = n())
+```
+
+Within-accession variance is exactly zero. An F ratio for accession would have
+a zero denominator, so ANOVA and any mean-separation test built on it are
+undefined for these traits. Days to flowering is treated here as one fixed
+observed value per accession rather than as a sample with error. This is a
+limitation of how the trait was scored, not a property of the biology.
+
+## Does PvFTa1 track flowering time?
+
+```{r}
+#| label: coverage
+genotyped <- pheno |> filter(pvfta1 == "Amplified")
+
+tibble(
+  metric = c("Accessions genotyped", "Gave the 300 bp product",
+             "Earliest genotyped (days)", "Latest genotyped (days)",
+             "Panel range (days)", "Genotyped range (days)",
+             "Share of panel range covered"),
+  value = c(nrow(genotyped), nrow(genotyped),
+            min(genotyped$dtff), max(genotyped$dtff),
+            max(pheno$dtff) - min(pheno$dtff),
+            max(genotyped$dtff) - min(genotyped$dtff),
+            sprintf("%.0f%%", 100 * (max(genotyped$dtff) - min(genotyped$dtff)) /
+                      (max(pheno$dtff) - min(pheno$dtff))))
+)
+```
+
+```{r}
+#| label: fig-flowering
+#| fig-cap: "Flowering window per accession. Filled point: days to first flowering. Open point: days to 50% flowering. Accessions amplified for PvFTa1 in red."
+#| fig-height: 6
+pal <- c("Amplified" = "#B4462F", "Not genotyped" = "#9AA5B1")
+
+pheno |>
+  mutate(accession = forcats::fct_reorder(accession, dtff)) |>
+  ggplot(aes(x = dtff, y = accession, colour = pvfta1)) +
+  geom_segment(aes(xend = dt50, yend = accession), linewidth = 1.4, alpha = .55) +
+  geom_point(size = 2.6) +
+  geom_point(aes(x = dt50), size = 2.6, shape = 21, fill = "white", stroke = 1.1) +
+  scale_colour_manual(values = pal, name = NULL) +
+  scale_x_continuous(breaks = seq(28, 52, 4)) +
+  labs(x = "Days after sowing", y = NULL) +
+  theme_minimal(base_size = 11) +
+  theme(legend.position = "top", panel.grid.minor = element_blank())
+```
+
+The red points are not clustered at the early end. They run the length of the
+axis: the earliest accession in the trial and the latest are both *PvFTa1*
+positive, as is an intermediate one. Whatever separates a 28-day accession from
+a 46-day accession here, it is not presence of this amplicon.
+
+Two readings are consistent with that. Either the locus is effectively fixed
+across these landraces, or the variation that matters is sequence-level rather
+than presence/absence. Both point to the same next experiment: sequence the
+amplicon and look for polymorphism, rather than screening more accessions for
+the band.
+
+## Are the accessions distinguishable at all?
+
+If the panel showed strong, clean genotype differences in every other trait,
+the null *PvFTa1* result would look more surprising. It does not.
+
+### One-way ANOVA and Duncan's test
+
+```{r}
+#| label: anova
+traits <- c(PH = "Plant height (cm)", NL = "Number of leaves",
+            NB = "Number of branches", LL = "Leaf length (cm)",
+            LB = "Leaf breadth (cm)", SD = "Stem diameter")
+
+anova_summary <- purrr::map_dfr(names(traits), function(tr) {
+  d <- week6 |>
+    select(accession, reading, value = all_of(tr)) |>
+    filter(!is.na(value)) |>
+    mutate(across(c(accession, reading), factor))
+  fit <- aov(value ~ accession + reading, data = d)
+  broom::tidy(fit) |>
+    filter(term == "accession") |>
+    transmute(trait = traits[[tr]], df, F = round(statistic, 2),
+              p = signif(p.value, 3))
+})
+
+anova_summary
+```
+
+Only stem diameter clears `p = 0.05`, and that result is an artefact: removing
+the between-block scale difference collapses the residual variance, so the test
+is really detecting which accessions were measured in which block. Discounting
+it, **no growth trait shows a significant accession effect at week 6.**
+
+### Where the variance actually sits
+
+A mixed model puts a number on that. Measurements are nested — accession, then
+pot within accession, then the individual plant — and `reading` cuts across all
+three.
+
+```{r}
+#| label: mixed
+vc <- purrr::map_dfr(names(traits), function(tr) {
+  d <- week6 |>
+    select(accession, pot, reading, value = all_of(tr)) |>
+    filter(!is.na(value)) |>
+    mutate(across(c(accession, pot, reading), factor))
+
+  fit <- lme4::lmer(value ~ reading + (1 | accession) + (1 | accession:pot),
+                    data = d, REML = TRUE,
+                    control = lme4::lmerControl(check.conv.singular = "ignore"))
+
+  v <- as.data.frame(lme4::VarCorr(fit))
+  pick <- function(g) { x <- v$vcov[v$grp == g]; if (length(x)) x else 0 }
+  a <- pick("accession"); p <- pick("accession:pot"); r <- pick("Residual")
+
+  tibble(Trait = traits[[tr]], n = nrow(d),
+         Accession = sprintf("%.1f%%", 100 * a / (a + p + r)),
+         Pot       = sprintf("%.1f%%", 100 * p / (a + p + r)),
+         Residual  = sprintf("%.1f%%", 100 * r / (a + p + r)))
+})
+
+vc
+```
+
+Accession identity accounts for under 10% of total variance in every
+vegetative trait. The overwhelming share sits in the residual — variation
+between individual plants and between recording sessions.
+
+This does **not** show the accessions are identical. It shows this trial cannot
+resolve vegetative differences between them: two pots per accession, heavy
+missing data, and two recording sessions that differ systematically leave very
+little power. The honest conclusion is that flowering time is the only
+phenotype in this dataset that is sharply structured, and it happens to be the
+one the marker was supposed to explain.
+
+## Departures from the original write-up
+
+Rebuilding from the sheet surfaced several discrepancies with the original
+analysis, recorded here rather than quietly repaired.
+
+| Issue | Detail |
+|---|---|
+| Growth-trait significance | The original reports significant variability in height, leaf number and stem diameter at week 6. Recomputed, no trait clears `p = 0.05`. |
+| Missing flowering records | Garu4, Round13, Wudil15 and Lahadin17 have empty flowering columns in the sheet, but the original table reports values for all twenty. |
+| Genotyped set | Methods list accessions 3a, 19a, 2a, 12a and 10a; the results chapter and the gel list Gani8 in place of Ruwan10. This report follows the gel. The finding holds under either set. |
+| Scale change | Stem diameter is recorded on different scales in the two blocks and should not be read across them. |
+| Absent plants | Eight rows of block 2 are all zeros. Zero is a valid branch count but not a valid height or leaf dimension, so those become missing. |
+
+## Conclusion
+
+Flowering time in this panel spans 18 days and is the one trait the trial
+resolves cleanly. Every accession tested for *PvFTa1* carried the 300 bp
+fragment, including both phenotypic extremes, so the locus is more conserved
+across this germplasm than the phenotypic spread would predict. Presence of the
+amplicon is not a usable marker for flowering time here.
+
+The productive next step is sequence-level: amplify and sequence *PvFTa1*
+across the full panel and test for polymorphism against flowering date, rather
+than scoring further accessions for presence of the band.
+
+## Reproducing this report
+
+```
+Rscript R/00_packages.R              # once
+quarto render report/pvfta1-phenology.qmd
+```
+
+Session information, so the numbers above can be tied to a toolchain:
+
+```{r}
+#| label: session
+#| code-fold: true
+sessionInfo()
+```
+
+## References
+
+::: {#refs}
+:::

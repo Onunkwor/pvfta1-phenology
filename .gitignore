@@ -3,3 +3,7 @@
 .Rproj.user/
 *.Rproj
 .DS_Store
+
+# Quarto
+/report/*_files/
+/.quarto/

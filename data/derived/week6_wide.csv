@@ -1,0 +1,81 @@
+accession_code,accession,lga,pot_id,pot,reading,plant_id,pvfta1,LB,LL,NB,NL,PH,SD
+1,Kura1,Kura,1a,a,1,1a-r1,Not genotyped,5,10.2,3,50,162,0.45
+1,Kura1,Kura,1a,a,2,1a-r2,Not genotyped,5.95,8.5,3,68,234,3.6
+1,Kura1,Kura,1b,b,1,1b-r1,Not genotyped,5,8,NA,50,27,0.5
+1,Kura1,Kura,1b,b,2,1b-r2,Not genotyped,5.1,6.6,4,54,254,3.8
+2,Danhassan2,Kura,2a,a,1,2a-r1,Amplified,4.3,6.4,NA,32,30,0.52
+2,Danhassan2,Kura,2a,a,2,2a-r2,Amplified,7,10,2,42,133,3.5
+2,Danhassan2,Kura,2b,b,1,2b-r1,Amplified,5.9,9,3,88,103,0.65
+2,Danhassan2,Kura,2b,b,2,2b-r2,Amplified,6.2,8.8,4,84,140,3.95
+3,Kumbotso3,Kumbotso,3a,a,1,3a-r1,Amplified,5.6,7.9,2,80,130,0.46
+3,Kumbotso3,Kumbotso,3a,a,2,3a-r2,Amplified,NA,NA,0,NA,NA,NA
+3,Kumbotso3,Kumbotso,3b,b,1,3b-r1,Amplified,5.7,8.3,2,40,66,0.61
+3,Kumbotso3,Kumbotso,3b,b,2,3b-r2,Amplified,5.3,11.9,3,43,214.5,3.6
+4,Garu4,Kumbotso,4a,a,1,4a-r1,Not genotyped,NA,NA,2,78,205,0.5
+4,Garu4,Kumbotso,4a,a,2,4a-r2,Not genotyped,NA,NA,0,NA,NA,NA
+4,Garu4,Kumbotso,4b,b,1,4b-r1,Not genotyped,5.4,8,3,49,43,0.6
+4,Garu4,Kumbotso,4b,b,2,4b-r2,Not genotyped,7.1,8.2,4,109,153.9,3.8
+5,Danzabura5,Bichi,5a,a,1,5a-r1,Not genotyped,6,10.7,1,51,199,0.55
+5,Danzabura5,Bichi,5a,a,2,5a-r2,Not genotyped,6,7.2,2,106,188,3.8
+5,Danzabura5,Bichi,5b,b,1,5b-r1,Not genotyped,NA,NA,NA,NA,NA,0.55
+5,Danzabura5,Bichi,5b,b,2,5b-r2,Not genotyped,NA,NA,0,NA,NA,NA
+6,Bichi6,Bichi,6a,a,1,6a-r1,Not genotyped,3.9,8.2,1,36,36,0.55
+6,Bichi6,Bichi,6a,a,2,6a-r2,Not genotyped,7.9,6.8,2,18,260,3.8
+6,Bichi6,Bichi,6b,b,1,6b-r1,Not genotyped,5.4,7,3,36,29.5,0.52
+6,Bichi6,Bichi,6b,b,2,6b-r2,Not genotyped,5.85,7.2,4,73,143,3.7
+7,Sumailia7,Sumaila,7a,a,1,7a-r1,Not genotyped,5.8,8.6,1,28,52,0.55
+7,Sumailia7,Sumaila,7a,a,2,7a-r2,Not genotyped,NA,5.9,0,NA,NA,NA
+7,Sumailia7,Sumaila,7b,b,1,7b-r1,Not genotyped,4.4,8.1,1,79,26,0.6
+7,Sumailia7,Sumaila,7b,b,2,7b-r2,Not genotyped,5.6,NA,0,8,260,3.65
+8,Gani8,Sumaila,8a,a,1,8a-r1,Amplified,5.3,6,2,94,40,0.45
+8,Gani8,Sumaila,8a,a,2,8a-r2,Amplified,6,8.8,3,138,303.6,3.7
+8,Gani8,Sumaila,8b,b,1,8b-r1,Amplified,NA,NA,NA,NA,NA,NA
+8,Gani8,Sumaila,8b,b,2,8b-r2,Amplified,5.5,NA,2,177,240,3.8
+9,Rano9,Rano,9a,a,1,9a-r1,Not genotyped,NA,NA,2,NA,NA,NA
+9,Rano9,Rano,9a,a,2,9a-r2,Not genotyped,NA,10,0,NA,NA,NA
+9,Rano9,Rano,9b,b,1,9b-r1,Not genotyped,6.2,11,3,101,180,0.7
+9,Rano9,Rano,9b,b,2,9b-r2,Not genotyped,5.5,11.9,3,46,46.7,3.6
+10,Ruwan10,Rano,10a,a,1,10a-r1,Not genotyped,6,10.7,NA,30,60,0.6
+10,Ruwan10,Rano,10a,a,2,10a-r2,Not genotyped,NA,10.8,0,NA,NA,NA
+10,Ruwan10,Rano,10b,b,1,10b-r1,Not genotyped,NA,NA,NA,NA,NA,NA
+10,Ruwan10,Rano,10b,b,2,10b-r2,Not genotyped,5.2,11.4,3,92,167.4,3.8
+11,Dawakin11,Dawakin Tofa,11a,a,1,11a-r1,Not genotyped,5,7.6,2,89,107,0.55
+11,Dawakin11,Dawakin Tofa,11a,a,2,11a-r2,Not genotyped,7.3,9.8,1,99,329.1,3.6
+11,Dawakin11,Dawakin Tofa,11b,b,1,11b-r1,Not genotyped,NA,NA,NA,NA,NA,NA
+11,Dawakin11,Dawakin Tofa,11b,b,2,11b-r2,Not genotyped,6.3,8.5,3,99,262.8,3.8
+12,Dawanao12,Dawakin Tofa,12a,a,1,12a-r1,Amplified,NA,NA,NA,NA,NA,NA
+12,Dawanao12,Dawakin Tofa,12a,a,2,12a-r2,Amplified,6.9,11.4,4,112,346.8,3.8
+12,Dawanao12,Dawakin Tofa,12b,b,1,12b-r1,Amplified,6.4,9.8,3,86,204,0.45
+12,Dawanao12,Dawakin Tofa,12b,b,2,12b-r2,Amplified,6,7.2,6,221,204.3,3.95
+13,Round13,Kiru,13a,a,1,13a-r1,Not genotyped,8.5,8.4,3,74,72,0.55
+13,Round13,Kiru,13a,a,2,13a-r2,Not genotyped,7.3,8.5,0,112,361,3.75
+13,Round13,Kiru,13b,b,1,13b-r1,Not genotyped,NA,NA,NA,NA,NA,NA
+13,Round13,Kiru,13b,b,2,13b-r2,Not genotyped,NA,NA,0,NA,NA,NA
+14,Kwanar14,Kiru,14a,a,1,14a-r1,Not genotyped,NA,NA,NA,NA,NA,NA
+14,Kwanar14,Kiru,14a,a,2,14a-r2,Not genotyped,6.1,9,4,87,181.5,3.9
+14,Kwanar14,Kiru,14b,b,1,14b-r1,Not genotyped,5,6,1,56,41,0.37
+14,Kwanar14,Kiru,14b,b,2,14b-r2,Not genotyped,NA,NA,0,NA,NA,NA
+15,Wudil15,Wudil,15a,a,1,15a-r1,Not genotyped,4.5,5.5,2,40,28,0.4
+15,Wudil15,Wudil,15a,a,2,15a-r2,Not genotyped,7.6,13.4,3,134,178,3.8
+15,Wudil15,Wudil,15b,b,1,15b-r1,Not genotyped,5,5.3,2,30,36,0.5
+15,Wudil15,Wudil,15b,b,2,15b-r2,Not genotyped,7.6,10.2,3,122,260,3.7
+16,Darki16,Wudil,16a,a,1,16a-r1,Not genotyped,5.5,6.9,2,41,30,0.45
+16,Darki16,Wudil,16a,a,2,16a-r2,Not genotyped,8.3,13.4,3,140,350,3.8
+16,Darki16,Wudil,16b,b,1,16b-r1,Not genotyped,NA,NA,NA,NA,NA,NA
+16,Darki16,Wudil,16b,b,2,16b-r2,Not genotyped,6.1,11.4,4,165,262,3.8
+17,Lahadin17,Dawakin Kudu,17a,a,1,17a-r1,Not genotyped,5,5.5,3,72,33,0.57
+17,Lahadin17,Dawakin Kudu,17a,a,2,17a-r2,Not genotyped,8,11.3,3,117,280,3.7
+17,Lahadin17,Dawakin Kudu,17b,b,1,17b-r1,Not genotyped,5.8,9,3,64,36,0.47
+17,Lahadin17,Dawakin Kudu,17b,b,2,17b-r2,Not genotyped,7.4,12.1,0,121,280,3.6
+18,Dawaki18,Dawakin Kudu,18a,a,1,18a-r1,Not genotyped,6.9,11,1,79,94,0.8
+18,Dawaki18,Dawakin Kudu,18a,a,2,18a-r2,Not genotyped,7.4,10.5,0,157,376,3.65
+18,Dawaki18,Dawakin Kudu,18b,b,1,18b-r1,Not genotyped,7.5,10.5,1,68,213,0.65
+18,Dawaki18,Dawakin Kudu,18b,b,2,18b-r2,Not genotyped,5.6,10.4,2,16,321,3.8
+19,Yankaba19,Nasarawa,19a,a,1,19a-r1,Amplified,5.3,11,2,109,104,0.65
+19,Yankaba19,Nasarawa,19a,a,2,19a-r2,Amplified,5.8,NA,2,210,337,3.7
+19,Yankaba19,Nasarawa,19b,b,1,19b-r1,Amplified,NA,NA,NA,NA,NA,NA
+19,Yankaba19,Nasarawa,19b,b,2,19b-r2,Amplified,7.4,9.5,4,117,350,3.7
+20,Sabuwar20,Nasarawa,20a,a,1,20a-r1,Not genotyped,6.1,7.4,3,58,36,0.58
+20,Sabuwar20,Nasarawa,20a,a,2,20a-r2,Not genotyped,6.8,12,1,230,360,3.8
+20,Sabuwar20,Nasarawa,20b,b,1,20b-r1,Not genotyped,6.5,6.1,1,25,29,0.53
+20,Sabuwar20,Nasarawa,20b,b,2,20b-r2,Not genotyped,7.7,13.7,2,59,91.8,3.5

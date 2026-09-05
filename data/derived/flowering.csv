@@ -1,0 +1,41 @@
+accession_code,accession,pot_id,pot,dtff,dt50,category,pvfta1
+1,Kura1,1a,a,32,38,Early,Not genotyped
+1,Kura1,1b,b,32,38,Early,Not genotyped
+2,Danhassan2,2a,a,36,42,Intermediate,Amplified
+2,Danhassan2,2b,b,36,42,Intermediate,Amplified
+3,Kumbotso3,3a,a,28,38,Early,Amplified
+3,Kumbotso3,3b,b,28,38,Early,Amplified
+4,Garu4,4a,a,NA,NA,NA,Not genotyped
+4,Garu4,4b,b,NA,NA,NA,Not genotyped
+5,Danzabura5,5a,a,37,45,Intermediate,Not genotyped
+5,Danzabura5,5b,b,37,45,Intermediate,Not genotyped
+6,Bichi6,6a,a,33,38,Early,Not genotyped
+6,Bichi6,6b,b,33,38,Early,Not genotyped
+7,Sumailia7,7a,a,34,39,Early,Not genotyped
+7,Sumailia7,7b,b,34,39,Early,Not genotyped
+8,Gani8,8a,a,36,38,Early,Amplified
+8,Gani8,8b,b,36,38,Early,Amplified
+9,Rano9,9a,a,36,38,Early,Not genotyped
+9,Rano9,9b,b,36,38,Early,Not genotyped
+10,Ruwan10,10a,a,45,47,Late,Not genotyped
+10,Ruwan10,10b,b,45,47,Late,Not genotyped
+11,Dawakin11,11a,a,35,38,Early,Not genotyped
+11,Dawakin11,11b,b,35,38,Early,Not genotyped
+12,Dawanao12,12a,a,46,51,Late,Amplified
+12,Dawanao12,12b,b,46,51,Late,Amplified
+13,Round13,13a,a,NA,NA,NA,Not genotyped
+13,Round13,13b,b,NA,NA,NA,Not genotyped
+14,Kwanar14,14a,a,35,38,Early,Not genotyped
+14,Kwanar14,14b,b,35,38,Early,Not genotyped
+15,Wudil15,15a,a,NA,NA,NA,Not genotyped
+15,Wudil15,15b,b,NA,NA,NA,Not genotyped
+16,Darki16,16a,a,42,47,Late,Not genotyped
+16,Darki16,16b,b,42,47,Late,Not genotyped
+17,Lahadin17,17a,a,NA,NA,NA,Not genotyped
+17,Lahadin17,17b,b,NA,NA,NA,Not genotyped
+18,Dawaki18,18a,a,32,38,Early,Not genotyped
+18,Dawaki18,18b,b,32,38,Early,Not genotyped
+19,Yankaba19,19a,a,30,38,Early,Amplified
+19,Yankaba19,19b,b,30,38,Early,Amplified
+20,Sabuwar20,20a,a,36,38,Early,Not genotyped
+20,Sabuwar20,20b,b,36,38,Early,Not genotyped

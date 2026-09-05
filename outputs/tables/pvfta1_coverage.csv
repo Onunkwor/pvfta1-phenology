@@ -1,0 +1,2 @@
+n_genotyped,n_amplified,dtff_span_genotyped,dtff_span_panel,pct_of_panel_range,dtff_min_genotyped,dtff_max_genotyped,spans_panel_min,spans_panel_max
+5,5,18,18,100,28,46,TRUE,TRUE

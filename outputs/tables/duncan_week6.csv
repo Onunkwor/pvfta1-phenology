@@ -1,0 +1,241 @@
+trait,trait_label,model,accession,mean,duncan_group
+LB,Leaf breadth (cm),adjusted,Round13,7.9,a
+LB,Leaf breadth (cm),adjusted,Dawaki18,6.85,ab
+LB,Leaf breadth (cm),adjusted,Sabuwar20,6.775,ab
+LB,Leaf breadth (cm),adjusted,Darki16,6.633333333333334,ab
+LB,Leaf breadth (cm),adjusted,Lahadin17,6.55,ab
+LB,Leaf breadth (cm),adjusted,Dawanao12,6.433333333333334,ab
+LB,Leaf breadth (cm),adjusted,Garu4,6.25,ab
+LB,Leaf breadth (cm),adjusted,Dawakin11,6.2,ab
+LB,Leaf breadth (cm),adjusted,Wudil15,6.175,ab
+LB,Leaf breadth (cm),adjusted,Yankaba19,6.166666666666667,ab
+LB,Leaf breadth (cm),adjusted,Danzabura5,6,b
+LB,Leaf breadth (cm),adjusted,Danhassan2,5.85,b
+LB,Leaf breadth (cm),adjusted,Rano9,5.85,b
+LB,Leaf breadth (cm),adjusted,Bichi6,5.7625,b
+LB,Leaf breadth (cm),adjusted,Gani8,5.6,b
+LB,Leaf breadth (cm),adjusted,Ruwan10,5.6,b
+LB,Leaf breadth (cm),adjusted,Kwanar14,5.55,b
+LB,Leaf breadth (cm),adjusted,Kumbotso3,5.533333333333333,b
+LB,Leaf breadth (cm),adjusted,Sumailia7,5.266666666666667,b
+LB,Leaf breadth (cm),adjusted,Kura1,5.2625,b
+LB,Leaf breadth (cm),naive,Round13,7.9,a
+LB,Leaf breadth (cm),naive,Dawaki18,6.85,ab
+LB,Leaf breadth (cm),naive,Sabuwar20,6.775,ab
+LB,Leaf breadth (cm),naive,Darki16,6.633333333333334,ab
+LB,Leaf breadth (cm),naive,Lahadin17,6.55,ab
+LB,Leaf breadth (cm),naive,Dawanao12,6.433333333333334,ab
+LB,Leaf breadth (cm),naive,Garu4,6.25,ab
+LB,Leaf breadth (cm),naive,Dawakin11,6.2,ab
+LB,Leaf breadth (cm),naive,Wudil15,6.175,ab
+LB,Leaf breadth (cm),naive,Yankaba19,6.166666666666667,ab
+LB,Leaf breadth (cm),naive,Danzabura5,6,ab
+LB,Leaf breadth (cm),naive,Danhassan2,5.85,ab
+LB,Leaf breadth (cm),naive,Rano9,5.85,ab
+LB,Leaf breadth (cm),naive,Bichi6,5.7625,b
+LB,Leaf breadth (cm),naive,Gani8,5.6,b
+LB,Leaf breadth (cm),naive,Ruwan10,5.6,b
+LB,Leaf breadth (cm),naive,Kwanar14,5.55,b
+LB,Leaf breadth (cm),naive,Kumbotso3,5.533333333333333,b
+LB,Leaf breadth (cm),naive,Sumailia7,5.266666666666667,b
+LB,Leaf breadth (cm),naive,Kura1,5.2625,b
+LL,Leaf length (cm),adjusted,Rano9,10.966666666666667,a
+LL,Leaf length (cm),adjusted,Ruwan10,10.966666666666667,a
+LL,Leaf length (cm),adjusted,Dawaki18,10.6,a
+LL,Leaf length (cm),adjusted,Darki16,10.566666666666666,a
+LL,Leaf length (cm),adjusted,Yankaba19,10.25,a
+LL,Leaf length (cm),adjusted,Sabuwar20,9.8,a
+LL,Leaf length (cm),adjusted,Lahadin17,9.475,a
+LL,Leaf length (cm),adjusted,Dawanao12,9.466666666666667,a
+LL,Leaf length (cm),adjusted,Kumbotso3,9.366666666666667,a
+LL,Leaf length (cm),adjusted,Danzabura5,8.95,a
+LL,Leaf length (cm),adjusted,Dawakin11,8.633333333333333,a
+LL,Leaf length (cm),adjusted,Wudil15,8.6,a
+LL,Leaf length (cm),adjusted,Danhassan2,8.55,a
+LL,Leaf length (cm),adjusted,Round13,8.45,a
+LL,Leaf length (cm),adjusted,Kura1,8.325,a
+LL,Leaf length (cm),adjusted,Garu4,8.1,a
+LL,Leaf length (cm),adjusted,Sumailia7,7.533333333333333,a
+LL,Leaf length (cm),adjusted,Kwanar14,7.5,a
+LL,Leaf length (cm),adjusted,Gani8,7.4,a
+LL,Leaf length (cm),adjusted,Bichi6,7.3,a
+LL,Leaf length (cm),naive,Rano9,10.966666666666667,a
+LL,Leaf length (cm),naive,Ruwan10,10.966666666666667,a
+LL,Leaf length (cm),naive,Dawaki18,10.6,a
+LL,Leaf length (cm),naive,Darki16,10.566666666666666,a
+LL,Leaf length (cm),naive,Yankaba19,10.25,a
+LL,Leaf length (cm),naive,Sabuwar20,9.8,a
+LL,Leaf length (cm),naive,Lahadin17,9.475,a
+LL,Leaf length (cm),naive,Dawanao12,9.466666666666667,a
+LL,Leaf length (cm),naive,Kumbotso3,9.366666666666667,a
+LL,Leaf length (cm),naive,Danzabura5,8.95,a
+LL,Leaf length (cm),naive,Dawakin11,8.633333333333333,a
+LL,Leaf length (cm),naive,Wudil15,8.6,a
+LL,Leaf length (cm),naive,Danhassan2,8.55,a
+LL,Leaf length (cm),naive,Round13,8.45,a
+LL,Leaf length (cm),naive,Kura1,8.325,a
+LL,Leaf length (cm),naive,Garu4,8.1,a
+LL,Leaf length (cm),naive,Sumailia7,7.533333333333333,a
+LL,Leaf length (cm),naive,Kwanar14,7.5,a
+LL,Leaf length (cm),naive,Gani8,7.4,a
+LL,Leaf length (cm),naive,Bichi6,7.3,a
+NB,Number of branches,adjusted,Dawanao12,4.333333333333333,a
+NB,Number of branches,adjusted,Kura1,3.3333333333333335,ab
+NB,Number of branches,adjusted,Danhassan2,3,ab
+NB,Number of branches,adjusted,Darki16,3,ab
+NB,Number of branches,adjusted,Yankaba19,2.6666666666666665,abc
+NB,Number of branches,adjusted,Bichi6,2.5,abc
+NB,Number of branches,adjusted,Wudil15,2.5,abc
+NB,Number of branches,adjusted,Gani8,2.3333333333333335,abc
+NB,Number of branches,adjusted,Garu4,2.25,abc
+NB,Number of branches,adjusted,Lahadin17,2.25,abc
+NB,Number of branches,adjusted,Dawakin11,2,bc
+NB,Number of branches,adjusted,Rano9,2,bc
+NB,Number of branches,adjusted,Kumbotso3,1.75,bc
+NB,Number of branches,adjusted,Sabuwar20,1.75,bc
+NB,Number of branches,adjusted,Kwanar14,1.6666666666666665,bc
+NB,Number of branches,adjusted,Ruwan10,1.5,bc
+NB,Number of branches,adjusted,Danzabura5,1,bc
+NB,Number of branches,adjusted,Dawaki18,1,bc
+NB,Number of branches,adjusted,Round13,1,bc
+NB,Number of branches,adjusted,Sumailia7,0.5,c
+NB,Number of branches,naive,Dawanao12,4.333333333333333,a
+NB,Number of branches,naive,Kura1,3.3333333333333335,ab
+NB,Number of branches,naive,Danhassan2,3,ab
+NB,Number of branches,naive,Darki16,3,ab
+NB,Number of branches,naive,Yankaba19,2.6666666666666665,abc
+NB,Number of branches,naive,Bichi6,2.5,abc
+NB,Number of branches,naive,Wudil15,2.5,abc
+NB,Number of branches,naive,Gani8,2.3333333333333335,abc
+NB,Number of branches,naive,Garu4,2.25,abc
+NB,Number of branches,naive,Lahadin17,2.25,abc
+NB,Number of branches,naive,Dawakin11,2,bc
+NB,Number of branches,naive,Rano9,2,bc
+NB,Number of branches,naive,Kumbotso3,1.75,bc
+NB,Number of branches,naive,Sabuwar20,1.75,bc
+NB,Number of branches,naive,Kwanar14,1.6666666666666665,bc
+NB,Number of branches,naive,Ruwan10,1.5,bc
+NB,Number of branches,naive,Danzabura5,1,bc
+NB,Number of branches,naive,Dawaki18,1,bc
+NB,Number of branches,naive,Round13,1,bc
+NB,Number of branches,naive,Sumailia7,0.5,c
+NL,Number of leaves,adjusted,Yankaba19,145.33333333333334,a
+NL,Number of leaves,adjusted,Dawanao12,139.66666666666666,ab
+NL,Number of leaves,adjusted,Gani8,136.33333333333334,abc
+NL,Number of leaves,adjusted,Darki16,115.33333333333333,abcd
+NL,Number of leaves,adjusted,Dawakin11,95.66666666666667,abcd
+NL,Number of leaves,adjusted,Lahadin17,93.5,abcd
+NL,Number of leaves,adjusted,Round13,93,abcd
+NL,Number of leaves,adjusted,Sabuwar20,93,abcd
+NL,Number of leaves,adjusted,Wudil15,81.5,abcd
+NL,Number of leaves,adjusted,Dawaki18,80,abcd
+NL,Number of leaves,adjusted,Garu4,78.66666666666667,abcd
+NL,Number of leaves,adjusted,Danzabura5,78.5,abcd
+NL,Number of leaves,adjusted,Rano9,73.5,abcd
+NL,Number of leaves,adjusted,Kwanar14,71.5,abcd
+NL,Number of leaves,adjusted,Danhassan2,61.5,abcd
+NL,Number of leaves,adjusted,Ruwan10,61,abcd
+NL,Number of leaves,adjusted,Kura1,55.5,bcd
+NL,Number of leaves,adjusted,Kumbotso3,54.333333333333336,cd
+NL,Number of leaves,adjusted,Bichi6,40.75,d
+NL,Number of leaves,adjusted,Sumailia7,38.333333333333336,d
+NL,Number of leaves,naive,Yankaba19,145.33333333333334,a
+NL,Number of leaves,naive,Dawanao12,139.66666666666666,a
+NL,Number of leaves,naive,Gani8,136.33333333333334,a
+NL,Number of leaves,naive,Darki16,115.33333333333333,ab
+NL,Number of leaves,naive,Dawakin11,95.66666666666667,ab
+NL,Number of leaves,naive,Lahadin17,93.5,ab
+NL,Number of leaves,naive,Round13,93,ab
+NL,Number of leaves,naive,Sabuwar20,93,ab
+NL,Number of leaves,naive,Wudil15,81.5,ab
+NL,Number of leaves,naive,Dawaki18,80,ab
+NL,Number of leaves,naive,Garu4,78.66666666666667,ab
+NL,Number of leaves,naive,Danzabura5,78.5,ab
+NL,Number of leaves,naive,Rano9,73.5,ab
+NL,Number of leaves,naive,Kwanar14,71.5,ab
+NL,Number of leaves,naive,Danhassan2,61.5,ab
+NL,Number of leaves,naive,Ruwan10,61,ab
+NL,Number of leaves,naive,Kura1,55.5,ab
+NL,Number of leaves,naive,Kumbotso3,54.333333333333336,ab
+NL,Number of leaves,naive,Bichi6,40.75,b
+NL,Number of leaves,naive,Sumailia7,38.333333333333336,b
+PH,Plant height (cm),adjusted,Yankaba19,263.6666666666667,a
+PH,Plant height (cm),adjusted,Dawanao12,251.70000000000002,ab
+PH,Plant height (cm),adjusted,Dawaki18,251,ab
+PH,Plant height (cm),adjusted,Dawakin11,232.96666666666667,ab
+PH,Plant height (cm),adjusted,Round13,216.5,ab
+PH,Plant height (cm),adjusted,Darki16,214,ab
+PH,Plant height (cm),adjusted,Gani8,194.53333333333333,ab
+PH,Plant height (cm),adjusted,Danzabura5,193.5,ab
+PH,Plant height (cm),adjusted,Kura1,169.25,ab
+PH,Plant height (cm),adjusted,Lahadin17,157.25,ab
+PH,Plant height (cm),adjusted,Kumbotso3,136.83333333333334,ab
+PH,Plant height (cm),adjusted,Garu4,133.96666666666667,ab
+PH,Plant height (cm),adjusted,Sabuwar20,129.2,ab
+PH,Plant height (cm),adjusted,Wudil15,125.5,ab
+PH,Plant height (cm),adjusted,Bichi6,117.125,ab
+PH,Plant height (cm),adjusted,Ruwan10,113.7,b
+PH,Plant height (cm),adjusted,Rano9,113.35,b
+PH,Plant height (cm),adjusted,Sumailia7,112.66666666666666,b
+PH,Plant height (cm),adjusted,Kwanar14,111.25,b
+PH,Plant height (cm),adjusted,Danhassan2,101.5,b
+PH,Plant height (cm),naive,Yankaba19,263.6666666666667,a
+PH,Plant height (cm),naive,Dawanao12,251.70000000000002,a
+PH,Plant height (cm),naive,Dawaki18,251,a
+PH,Plant height (cm),naive,Dawakin11,232.96666666666667,a
+PH,Plant height (cm),naive,Round13,216.5,a
+PH,Plant height (cm),naive,Darki16,214,a
+PH,Plant height (cm),naive,Gani8,194.53333333333333,a
+PH,Plant height (cm),naive,Danzabura5,193.5,a
+PH,Plant height (cm),naive,Kura1,169.25,a
+PH,Plant height (cm),naive,Lahadin17,157.25,a
+PH,Plant height (cm),naive,Kumbotso3,136.83333333333334,a
+PH,Plant height (cm),naive,Garu4,133.96666666666667,a
+PH,Plant height (cm),naive,Sabuwar20,129.2,a
+PH,Plant height (cm),naive,Wudil15,125.5,a
+PH,Plant height (cm),naive,Bichi6,117.125,a
+PH,Plant height (cm),naive,Ruwan10,113.7,a
+PH,Plant height (cm),naive,Rano9,113.35,a
+PH,Plant height (cm),naive,Sumailia7,112.66666666666666,a
+PH,Plant height (cm),naive,Kwanar14,111.25,a
+PH,Plant height (cm),naive,Danhassan2,101.5,a
+SD,Stem diameter,adjusted,Dawanao12,2.7333333333333334,a
+SD,Stem diameter,adjusted,Yankaba19,2.6833333333333336,a
+SD,Stem diameter,adjusted,Darki16,2.683333333333333,a
+SD,Stem diameter,adjusted,Dawakin11,2.65,a
+SD,Stem diameter,adjusted,Gani8,2.65,a
+SD,Stem diameter,adjusted,Dawaki18,2.225,b
+SD,Stem diameter,adjusted,Ruwan10,2.2,b
+SD,Stem diameter,adjusted,Danhassan2,2.1550000000000002,b
+SD,Stem diameter,adjusted,Rano9,2.15,b
+SD,Stem diameter,adjusted,Round13,2.15,b
+SD,Stem diameter,adjusted,Bichi6,2.1425,b
+SD,Stem diameter,adjusted,Kwanar14,2.135,b
+SD,Stem diameter,adjusted,Sabuwar20,2.1025,b
+SD,Stem diameter,adjusted,Wudil15,2.1,b
+SD,Stem diameter,adjusted,Kura1,2.0875,b
+SD,Stem diameter,adjusted,Lahadin17,2.085,b
+SD,Stem diameter,adjusted,Danzabura5,1.6333333333333333,c
+SD,Stem diameter,adjusted,Garu4,1.6333333333333333,c
+SD,Stem diameter,adjusted,Sumailia7,1.5999999999999999,c
+SD,Stem diameter,adjusted,Kumbotso3,1.5566666666666666,c
+SD,Stem diameter,naive,Dawanao12,2.7333333333333334,a
+SD,Stem diameter,naive,Yankaba19,2.6833333333333336,a
+SD,Stem diameter,naive,Darki16,2.683333333333333,a
+SD,Stem diameter,naive,Dawakin11,2.65,a
+SD,Stem diameter,naive,Gani8,2.65,a
+SD,Stem diameter,naive,Dawaki18,2.225,a
+SD,Stem diameter,naive,Ruwan10,2.2,a
+SD,Stem diameter,naive,Danhassan2,2.1550000000000002,a
+SD,Stem diameter,naive,Rano9,2.15,a
+SD,Stem diameter,naive,Round13,2.15,a
+SD,Stem diameter,naive,Bichi6,2.1425,a
+SD,Stem diameter,naive,Kwanar14,2.135,a
+SD,Stem diameter,naive,Sabuwar20,2.1025,a
+SD,Stem diameter,naive,Wudil15,2.1,a
+SD,Stem diameter,naive,Kura1,2.0875,a
+SD,Stem diameter,naive,Lahadin17,2.085,a
+SD,Stem diameter,naive,Danzabura5,1.6333333333333333,a
+SD,Stem diameter,naive,Garu4,1.6333333333333333,a
+SD,Stem diameter,naive,Sumailia7,1.5999999999999999,a
+SD,Stem diameter,naive,Kumbotso3,1.5566666666666666,a

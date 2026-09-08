@@ -1,0 +1,20 @@
+cff-version: 1.2.0
+message: "If you use this reanalysis, please cite it as below."
+title: "PvFTa1 and flowering time in twenty Kano common bean accessions"
+abstract: >-
+  Reproducible R reanalysis of a screen-house trial of 20 Nigerian common bean
+  landraces: mixed-effects variance partitioning, Duncan's test, and an ODE
+  model of the floral transition. Finds the PvFTa1 amplicon spans the panel's
+  entire flowering range.
+type: software
+authors:
+  - family-names: Onunkwor
+    given-names: Raphael Odera
+license: MIT
+repository-code: "https://github.com/Onunkwor/pvfta1-phenology"
+keywords:
+  - Phaseolus vulgaris
+  - flowering time
+  - PvFTa1
+  - mixed models
+  - reproducible research

@@ -6,9 +6,12 @@ of Kano State, Nigeria. The trial ran at the Department of Biological
 Sciences, Bells University of Technology, Ota, from November 2024 to July
 2025.
 
-The wet-lab work, the trial and the original scoring are mine. This repository
-rebuilds the statistics from the raw recording sheet, so that every number
-below can be traced to a line of code and a row of data.
+The trial, the phenotyping and the original scoring were my undergraduate
+research project, carried out under the supervision of Dr K.E. Ogunsola. DNA
+extraction and *PvFTa1* amplification were carried out by a commercial
+laboratory. This repository rebuilds the statistics from the raw recording
+sheet, so that every number below can be traced to a line of code and a row of
+data.
 
 ## The question
 
@@ -217,6 +220,17 @@ recording round is not resolvable from the file alone. The models treat
 ANOVA hold under both readings; only the label on the residual term changes
 ("plant within pot" versus "measurement occasion"). The flowering result does
 not touch the second block at all.
+
+## Acknowledgements
+
+The underlying trial was my B.Tech. research project in the Department of
+Biological Sciences, Bells University of Technology, Ota, supervised by
+**Dr K.E. Ogunsola**, whose guidance shaped the design of the study and the
+original analysis. I am grateful for that supervision.
+
+This reanalysis was carried out independently in 2026, after the thesis had
+been submitted and examined. The departures from the original analysis
+documented above, and any errors in this repository, are mine alone.
 
 ## Licence
 

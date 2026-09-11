@@ -50,8 +50,10 @@ germplasm.
 
 ## The trial
 
-Twenty accessions, two pots each, four seeds per pot thinned to two plants at
-week 2, in a completely randomised design: 80 plants. Growth traits were
+The trial was my undergraduate research project, supervised by Dr K.E. Ogunsola
+at Bells University of Technology. Twenty accessions, two pots each, four seeds
+per pot thinned to two plants at week 2, in a completely randomised design: 80
+plants. DNA extraction and amplification were carried out commercially. Growth traits were
 recorded weekly from week 2 to week 6; days to first flowering and days to 50%
 flowering were scored once per pot. The trial ran at the Department of
 Biological Sciences, Bells University of Technology, Ota, from November 2024 to
@@ -442,6 +444,14 @@ Session information, so the numbers above can be tied to a toolchain:
 #| code-fold: true
 sessionInfo()
 ```
+
+## Acknowledgements
+
+The underlying trial was my B.Tech. research project in the Department of
+Biological Sciences, Bells University of Technology, Ota, supervised by
+Dr K.E. Ogunsola. This reanalysis was carried out independently in 2026, after
+the thesis had been submitted and examined; the departures from the original
+analysis documented above, and any errors here, are mine alone.
 
 ## References
 

@@ -145,6 +145,12 @@ dt50_degenerate <- max(dt50_ties$n_accessions) / nrow(pheno)
 # fitted second threshold would be reporting that artefact rather than biology.
 lag_vs_dtff <- with(pheno, cor(dtff, dt50 - dtff))
 
+# The panel-wide correlation understates the problem. Within the tied group the
+# interval is dt50 - dtff with dt50 held constant, so it is a linear function of
+# dtff by construction and the correlation is exactly -1.
+tied <- pheno |> filter(dt50 == as.numeric(names(sort(table(dt50), decreasing = TRUE))[1]))
+lag_vs_dtff_tied <- cor(tied$dtff, tied$dt50 - tied$dtff)
+
 # ---------------------------------------------------------------------------
 # 6. What would identify the model
 # ---------------------------------------------------------------------------
@@ -198,8 +204,11 @@ print(pvfta1_test |> mutate(across(where(is.numeric), ~ signif(.x, 4))) |>
 cat("\n== Why the two-threshold model is not fitted ==\n")
 cat(sprintf("Most common dt50 value shared by %.0f%% of accessions.\n",
             100 * dt50_degenerate))
-cat(sprintf("corr(dtff, dt50 - dtff) = %.3f, largely induced by those ties.\n",
+cat(sprintf("corr(dtff, dt50 - dtff) = %.3f across all accessions.\n",
             lag_vs_dtff))
+cat(sprintf("Within the %d tied accessions it is exactly %.0f: with dt50 fixed,\n",
+            nrow(tied), lag_vs_dtff_tied))
+cat("the interval is dtff subtracted from a constant, not an observation.\n")
 
 cat("\n== Timing precision needed to resolve a given rate difference ==\n")
 print(resolution |>

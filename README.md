@@ -191,7 +191,17 @@ several things worth stating plainly.
 **Accession effects on growth traits do not reach significance when
 recomputed.** The thesis describes significant variability in plant height,
 leaf number and stem diameter at week 6. Recomputed from the sheet, no growth
-trait clears p = 0.05. The Duncan letters in `outputs/tables/duncan_week6.csv`
+trait clears p = 0.05 in the naive model (`value ~ accession`, F between 0.12
+and 1.77).
+
+One number in `outputs/tables/anova_week6.csv` needs a warning attached. In the
+adjusted model (`value ~ accession + reading`), stem diameter returns
+F = 31.9, p = 5e-19. That is an artefact, not a finding. Adding `reading`
+absorbs the sevenfold between-block scale change, which collapses the residual
+mean square from 3.55 to 0.013 — a 274-fold shrink — while the accession mean
+square is unchanged at 0.414. The F ratio explodes because its denominator
+nearly vanishes, not because accessions differ. Stem diameter is not comparable
+across blocks and should not be read from either model. The Duncan letters in `outputs/tables/duncan_week6.csv`
 are reported for completeness, but a mean separation test after a
 non-significant F should not be read as evidence of real differences.
 

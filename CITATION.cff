@@ -11,6 +11,7 @@ authors:
   - family-names: Onunkwor
     given-names: Raphael Odera
 license: MIT
+doi: 10.5281/zenodo.23336696
 repository-code: "https://github.com/Onunkwor/pvfta1-phenology"
 keywords:
   - Phaseolus vulgaris

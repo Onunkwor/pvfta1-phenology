@@ -1,5 +1,9 @@
 # PvFTa1 and flowering time in twenty Kano common bean accessions
 
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.23336696.svg)](https://doi.org/10.5281/zenodo.23336696)
+
+The data and code are archived on Zenodo: [doi:10.5281/zenodo.23336696](https://doi.org/10.5281/zenodo.23336696) (all versions). Data CC BY 4.0, code MIT.
+
 A reproducible reanalysis, in R, of a screen-house trial of *Phaseolus
 vulgaris* accessions collected from markets across ten Local Government Areas
 of Kano State, Nigeria. The trial ran at the Department of Biological

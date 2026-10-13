@@ -1,0 +1,38 @@
+{
+  "upload_type": "dataset",
+  "title": "Flowering time and growth of twenty Kano common bean (Phaseolus vulgaris) landraces: screen-house trial data and reproducible reanalysis",
+  "description": "<p>Raw and tidied data from a screen-house trial of twenty traditional common bean (<i>Phaseolus vulgaris</i>) varieties bought from markets across ten Local Government Areas of Kano State, Nigeria, grown at the Department of Biological Sciences, Bells University of Technology, Ota, from November 2024 to July 2025.</p><p>The data cover weekly growth from week 2 to week 6 (plant height, number of leaves, number of branches, leaf length, leaf breadth, stem diameter), days to first flowering and to 50% flowering, and the PvFTa1 amplification result for five accessions. Forty pots (20 accessions x 2 pots), 80 plants, completely randomised design.</p><p>The record also contains a reproducible R reanalysis: mixed-effects variance partitioning, Duncan's test, and an ODE model of the floral transition. The raw recording sheet is unmodified; every cleaning step is in R/01_tidy_data.R. Data and documentation are shared under CC BY 4.0; the R code under the MIT licence.</p>",
+  "creators": [
+    {
+      "name": "Onunkwor, Raphael Odera",
+      "affiliation": "Bells University of Technology, Ota, Nigeria"
+    }
+  ],
+  "contributors": [
+    {
+      "name": "Ogunsola, K.E.",
+      "affiliation": "Bells University of Technology, Ota, Nigeria",
+      "type": "Supervisor"
+    }
+  ],
+  "keywords": [
+    "Phaseolus vulgaris",
+    "common bean",
+    "landraces",
+    "Kano",
+    "Nigeria",
+    "flowering time",
+    "PvFTa1",
+    "phenology",
+    "open data",
+    "reproducible research"
+  ],
+  "license": "cc-by-4.0",
+  "related_identifiers": [
+    {
+      "identifier": "https://github.com/Onunkwor/pvfta1-phenology",
+      "relation": "isSupplementTo",
+      "resource_type": "software"
+    }
+  ]
+}
